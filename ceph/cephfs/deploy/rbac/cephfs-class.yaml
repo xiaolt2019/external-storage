@@ -1,0 +1,11 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: cephfs
+provisioner: ceph.com/cephfs
+parameters:
+    monitors: 172.16.0.51:6789,172.16.0.52:6789,172.16.0.53:6789
+    adminId: admin
+    adminSecretName: ceph-admin-secret
+    adminSecretNamespace: "kube-system"
+    claimRoot: /volumes/kubernetes

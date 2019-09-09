@@ -27,11 +27,11 @@ spec:
             - name: PROVISIONER_NAME
               value: fuseim.pri/ifs
             - name: NFS_SERVER
-              value: 10.10.10.60
+              value: 172.16.0.250 
             - name: NFS_PATH
-              value: /ifs/kubernetes
+              value: /data
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.10.10.60
-            path: /ifs/kubernetes
+            server: 172.16.0.250
+            path: /data
